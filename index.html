@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>GUI Demo</title>
+<title>Bear Bike</title>
 <style>
 html, body {
   width:  100%;
@@ -22,6 +22,7 @@ html, body {
 <script src="js/model/model.js"></script>
 <script src="js/view/view.js"></script>
 <script src="js/view/gameScreen.js"></script>
+<script src="js/view/renderer.js"></script>
 
 <script>
 "use strict";
@@ -34,6 +35,12 @@ BEAR.src = 'js/assets/bear.jpg';
 
 var BIKE = new Image();
 BIKE.src = 'js/assets/bike.jpg';
+
+var WATER = new Image();
+WATER.src = 'js/assets/water.jpg';
+
+var THUMB = new Image();
+THUMB.src = 'js/assets/thumb.png';
 /**
  * A model. Doesn't do anything yet.
  */
