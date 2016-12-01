@@ -10,15 +10,15 @@ GameScreen.prototype.keydownHandler = function(keyEvent) {
   this.model.keydownHandler(keyEvent);
 }
 GameScreen.prototype.postprocess = function(ctx, windowX, windowY) {
-  var x1 = this.model.player1.x * 800;
+  var x1 = this.model.player1.x * 700;
   var y1 = (1 - this.model.player1.y) * 100;
+  ctx.drawImage(BEAR, x1 + windowX, 200 + windowY, 100, 100)
   ctx.fillStyle = "#FFFFFF"
-  ctx.fillRect(x1 + windowX, 100 + windowY, 5, 5);
   ctx.fillRect(100 + windowX, 100 + y1 + windowY, 50, 100 - y1);
 
-  var x2 = this.model.player2.x * 800;
+  var x2 = this.model.player2.x * 700;
   var y2 = (1 - this.model.player2.y) * 100;
+  ctx.drawImage(BIKE, x2 + windowX, windowY + 500, 100, 100);
   ctx.fillStyle = "#FFFFFF"
-  ctx.fillRect(x2 + windowX, 100 + windowY + 300, 5, 5);
   ctx.fillRect(100 + windowX, 100 + y2 + windowY + 300, 50, 100 - y2);
 }

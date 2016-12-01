@@ -40,7 +40,7 @@ Model.prototype.keydownHandler = function(keyEvent) {
     }
   } else if (keyEvent.keyCode == 83 && this.player1.mode == "DRINK") {
     this.player1.y -= 0.1;
-    if (this.player1.y <= 0) {
+    if (this.player1.y <= 0.001) {
       this.player1.y = 1;
       this.player1.mode = "BIKE";
     }
@@ -67,7 +67,8 @@ Model.prototype.keydownHandler = function(keyEvent) {
     }
   } else if (keyEvent.keyCode == 40 && this.player2.mode == "DRINK") {
     this.player2.y -= 0.1;
-    if (this.player2.y <= 0) {
+    console.log(this.player2.y);
+    if (this.player2.y <= 0.001) {
       this.player2.y = 1;
       this.player2.mode = "BIKE";
     }

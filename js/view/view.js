@@ -19,13 +19,20 @@ View.prototype.putMainMenu = function() {
   startButton.clickHandler = function() {
     this.parent.parent.startGame();
   }
+  startButton.postprocess = function(ctx, windowX, windowY) {
+    ctx.drawImage(BEAR, 5 + windowX, 5 + windowY, 90, 90);
+  }
 
   mainMenu.addComponent("startButton", startButton);
-
+/*
   var otherButton = new Panel(650, 450, 100, 100);
   otherButton.color = "#22CC22"
 
+  otherButton.postprocess = function(ctx, windowX, windowY) {
+    ctx.drawImage(BIKE, 5 + windowX, 5 + windowY, 90, 90);
+  }
   mainMenu.addComponent("otherButton", otherButton);
+  */
 
   this.addComponent("mainMenu", mainMenu);
 }
@@ -50,6 +57,15 @@ View.prototype.endGame = function(winnerID) {
   var endScreen = new Panel(0, 0, 800, 600);
   this.addComponent("endScreen", endScreen);
   endScreen.color = "#44AA44";
+  if (winnerID == 1) {
+    endScreen.postprocess = function(ctx, windowX, windowY) {
+      ctx.drawImage(BEAR, 0, 0, 800, 600);
+    }
+  } else {
+    endScreen.postprocess = function(ctx, windowX, windowY) {
+      ctx.drawImage(BIKE, 0, 0, 800, 600);
+    }
+  }
   endScreen.clickHandler = function() {
     this.parent.putMainMenu();
   }
